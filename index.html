@@ -332,6 +332,7 @@ footer {
 .hero-content > *:nth-child(6){animation-delay:0.6s}
 
 @media(max-width:900px){
+  .hamburger{display:none !important;}
   .hero-visual{display:none;}
   .footer-grid{grid-template-columns:1fr 1fr;}
   .steps::before{display:none;}
@@ -559,6 +560,157 @@ footer {
   </div>
 </section>
 
+
+<!-- ═══════════════ STUDENT ENQUIRY FORM ═══════════════ -->
+<section class="enquiry-section" id="enquiry">
+  <div class="enquiry-inner">
+    <div class="enquiry-left">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="enquiry-title">Start Your <span class="accent">Admission</span> Journey Today</h2>
+      <p class="enquiry-desc">Fill in your details and our counsellors will reach out to guide you — completely free.</p>
+      <div class="enquiry-perks">
+        <div class="eperk"><span class="eperk-dot"></span>Free counselling, no charges</div>
+        <div class="eperk"><span class="eperk-dot"></span>Response within 24 hours</div>
+        <div class="eperk"><span class="eperk-dot"></span>Expert guidance from admission specialists</div>
+      </div>
+    </div>
+    <div class="enquiry-right">
+      <div class="enquiry-form-card" id="enquiryFormCard">
+        <div class="ef-row">
+          <div class="ef-group">
+            <label class="ef-label">Full Name *</label>
+            <input id="ef_name" type="text" class="ef-input" placeholder=""/>
+          </div>
+          <div class="ef-group">
+            <label class="ef-label">Phone Number *</label>
+            <input id="ef_phone" type="tel" class="ef-input" placeholder=""/>
+          </div>
+        </div>
+        <div class="ef-row">
+          <div class="ef-group">
+            <label class="ef-label">Email Address *</label>
+            <input id="ef_email" type="email" class="ef-input" placeholder=""/>
+          </div>
+          <div class="ef-group">
+            <label class="ef-label">City / Location *</label>
+            <input id="ef_city" type="text" class="ef-input" placeholder=""/>
+          </div>
+        </div>
+        <div class="ef-group" style="margin-top:4px;">
+          <label class="ef-label">Course Interested In</label>
+          <select id="ef_course" class="ef-input ef-select">
+            <option value="">Select a course...</option>
+            <option>B.Tech / BE (Engineering)</option>
+            <option>MBBS / Nursing (Medical)</option>
+            <option>BBA / B.Com (Business)</option>
+            <option>BCA / B.Sc CS (Computer Science)</option>
+            <option>B.Sc / B.A. (Arts &amp; Science)</option>
+            <option>Paramedical (Allied Health)</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div id="ef_error" style="display:none;color:#e03;font-size:0.75rem;font-weight:700;margin-top:4px;">⚠ Please fill in all required fields.</div>
+        <button id="ef_submit" class="ef-submit">Submit Enquiry →</button>
+      </div>
+
+      <!-- Thank You State -->
+      <div class="enquiry-thankyou" id="enquiryThankyou" style="display:none;">
+        <div class="ty-icon">✅</div>
+        <h3 class="ty-title">Thank You!</h3>
+        <p class="ty-msg">We've received your enquiry. Our counsellor will contact you within 24 hours. We're excited to help you secure your dream college! 🎓</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.enquiry-section {
+  background: linear-gradient(135deg, #f8f9ff 0%, #eef2ff 100%);
+  padding: 90px 6%;
+}
+.enquiry-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+}
+.enquiry-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: 2px;
+  color: var(--bluedeep);
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+.enquiry-desc {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.enquiry-perks { display: flex; flex-direction: column; gap: 10px; }
+.eperk { display: flex; align-items: center; gap: 10px; font-size: 0.82rem; color: #444; font-weight: 600; }
+.eperk-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue1); flex-shrink: 0; }
+.enquiry-form-card {
+  background: white;
+  border-radius: 20px;
+  padding: 36px 32px;
+  box-shadow: 0 12px 48px rgba(4,103,213,0.1);
+  border: 1px solid rgba(4,103,213,0.08);
+}
+.ef-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.ef-group { display: flex; flex-direction: column; gap: 6px; }
+.ef-label { font-size: 0.72rem; font-weight: 700; color: #333; letter-spacing: 0.3px; }
+.ef-input {
+  padding: 11px 14px;
+  border: 1.5px solid #D8E2F8;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-family: 'Nunito', sans-serif;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #fafbff;
+  color: #222;
+}
+.ef-input:focus { border-color: var(--blue1); box-shadow: 0 0 0 3px rgba(4,103,213,0.1); background: white; }
+.ef-select { cursor: pointer; }
+.ef-submit {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  background: linear-gradient(135deg, var(--blue1), var(--blue2));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.ef-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(4,103,213,0.3); }
+.enquiry-thankyou {
+  background: white;
+  border-radius: 20px;
+  padding: 48px 32px;
+  text-align: center;
+  box-shadow: 0 12px 48px rgba(4,103,213,0.1);
+}
+.ty-icon { font-size: 3rem; margin-bottom: 16px; }
+.ty-title { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--bluedeep); letter-spacing: 2px; margin-bottom: 12px; }
+.ty-msg { font-size: 0.88rem; color: #555; line-height: 1.7; }
+@media(max-width:768px) {
+  .enquiry-inner { grid-template-columns: 1fr; gap: 36px; }
+  .ef-row { grid-template-columns: 1fr; }
+  .enquiry-form-card { padding: 24px 20px; }
+}
+</style>
+
+
+
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
@@ -606,3 +758,44 @@ footer {
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>window.addEventListener('load',function(){document.querySelectorAll('.stat-num[data-target]').forEach(function(el){var t=+el.getAttribute('data-target'),s=el.getAttribute('data-suffix')||'',d=1500,st=performance.now();(function tick(now){var p=Math.min((now-st)/d,1),e=1-Math.pow(1-p,3);el.textContent=Math.floor(e*t)+s;p<1?requestAnimationFrame(tick):el.textContent=t+s;})(performance.now());});});</script>
+
+<script>
+window.addEventListener('load', function() {
+  var btn = document.getElementById('ef_submit');
+  if (!btn) return;
+  btn.addEventListener('click', function() {
+    var n  = document.getElementById('ef_name').value.trim();
+    var p  = document.getElementById('ef_phone').value.trim();
+    var em = document.getElementById('ef_email').value.trim();
+    var c  = document.getElementById('ef_city').value.trim();
+    var co = document.getElementById('ef_course').value.trim();
+    var err = document.getElementById('ef_error');
+    if (!n || !p || !em || !c) { err.style.display='block'; return; }
+    err.style.display = 'none';
+    btn.textContent = 'Submitting...';
+    btn.disabled = true;
+    var now = new Date();
+    var dt = now.getDate()+'/'+(now.getMonth()+1)+'/'+now.getFullYear()+' '+now.getHours()+':'+('0'+now.getMinutes()).slice(-2);
+    var url = 'https://script.google.com/macros/s/AKfycbwva4E2uDEioRVrv47lGr28rUTktFBWiwMPS4g1u8a7wT4vS7H0RL7KHtEHjStvp9yJug/exec'
+      + '?date=' + encodeURIComponent(dt)
+      + '&name=' + encodeURIComponent(n)
+      + '&phone=' + encodeURIComponent(p)
+      + '&email=' + encodeURIComponent(em)
+      + '&city=' + encodeURIComponent(c)
+      + '&course=' + encodeURIComponent(co || 'Not selected');
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        document.getElementById('enquiryFormCard').style.display = 'none';
+        document.getElementById('enquiryThankyou').style.display = 'block';
+      }
+    };
+    xhr.onerror = function() {
+      document.getElementById('enquiryFormCard').style.display = 'none';
+      document.getElementById('enquiryThankyou').style.display = 'block';
+    };
+    xhr.send();
+  });
+});
+</script>
